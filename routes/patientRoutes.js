@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { auth, permit } from "../middleware/authMiddleWare.js";
+import { auth, permit } from "../middleware/authMiddleware.js";
 import {
   searchDoctors,
   bookAppointment,
