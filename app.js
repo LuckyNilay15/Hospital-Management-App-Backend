@@ -15,7 +15,15 @@ dotenv.config();
 const app = express();
 connectDB();
 
-app.use(cors());
+const allowedOrigins = [
+  "https://your-frontend.netlify.app", // replace with your deployed frontend URL
+  "http://localhost:4200" // optional, for local development
+];
+
+app.use(cors({
+  origin: allowedOrigins,
+  credentials: true
+}));
 app.use(morgan("dev"));
 app.use(express.json());
 app.use(cookieParser());
